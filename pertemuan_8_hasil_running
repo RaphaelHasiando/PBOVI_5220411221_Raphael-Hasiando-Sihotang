@@ -1,0 +1,158 @@
+PS D:\Python_Praktik\pertemuan8> & C:/Users/user/AppData/Local/Programs/Python/Python311/python.exe d:/Python_Praktik/pertemuan8/studi_kasus.py
+No. 1
+Judul       :   Judul1
+Subjek      :   Subjek1
+Deskripsi   :   ['841239-0', ['Susilo', 'Jubile'], 59, '50cm']
+
+No. 2
+Judul       :   Judul2
+Subjek      :   Subjek2
+Deskripsi   :   ['844920-0', 'Lincoln', 109, '89cm']
+
+No. 1
+Judul       :   Judul Majalah 1
+Subjek      :   Subjek Majalah 1
+Deskripsi   :   ['Vol. 53', 'Issue 1']
+
+No. 2
+Judul       :   Judul Majalah 2
+Subjek      :   Subjek Majalah 2
+Deskripsi   :   ['Vol. 89', 'Issue 2']
+
+No. 1
+Judul       :   Judul DVD 1
+Subjek      :   Subjek DVD 1
+Deskripsi   :   ['Bryan Adams', 'Romance']
+
+No. 2
+Judul       :   Judul DVD 2
+Subjek      :   Subjek DVD 2
+Deskripsi   :   ['Bryan Adams', 'Horror']
+
+================ Katalog ================
+Jumlah item di katalog: 6
+=======================================================
+Ditemukan: 
+
+Judul       :   Judul1
+Subjek      :   Subjek1
+Deskripsi   :   ['841239-0', ['Susilo', 'Jubile'], 59, '50cm']
+
+=======================================================
+=======================================================
+Ditemukan, tetapi terdapat lebih dari 1 data yang sama
+Judul       :   Judul DVD 1
+Subjek      :   Subjek DVD 1
+Deskripsi   :   ['Bryan Adams', 'Romance']
+
+Judul       :   Judul DVD 2
+Subjek      :   Subjek DVD 2
+Deskripsi   :   ['Bryan Adams', 'Horror']
+
+=======================================================
+=======================================================
+Tidak ditemukan
+=======================================================
+================ Pengarang ================
+=======================================================
+Ditemukan:
+
+Judul       :   Judul1
+Subjek      :   Subjek1
+Pengarang 1 : Susilo
+Pengarang 2 : Jubile
+ISBN       :   841239-0
+Deskripsi  :   [59, '50cm']
+=======================================================
+=======================================================
+Ditemukan:
+
+Judul       :   Judul2
+Subjek      :   Subjek2
+Pengarang   :   Lincoln
+ISBN       :   844920-0
+Deskripsi  :   [109, '89cm']
+=======================================================
+=======================================================
+Tidak ditemukan
+=======================================================
+PS D:\Python_Praktik\pertemuan8> & C:/Users/user/AppData/Local/Programs/Python/Python311/python.exe d:/Python_Praktik/pertemuan8/studi_kasus.py
+No. 1
+Judul       :   Judul1
+Subjek      :   Subjek1
+Deskripsi   :   ['841239-0', ['Susilo', 'Jubile'], 59, '50cm']
+
+No. 2
+Judul       :   Judul2
+Subjek      :   Subjek2
+Deskripsi   :   ['844920-0', 'Lincoln', 109, '89cm']
+
+No. 1
+Judul       :   Judul Majalah 1
+Subjek      :   Subjek Majalah 1
+Deskripsi   :   ['Vol. 53', 'Issue 1']
+
+No. 2
+Judul       :   Judul Majalah 2
+Subjek      :   Subjek Majalah 2
+Deskripsi   :   ['Vol. 89', 'Issue 2']
+
+No. 1
+Judul       :   Judul DVD 1
+Subjek      :   Subjek DVD 1
+Deskripsi   :   ['Bryan Adams', 'Romance']
+
+No. 2
+Judul       :   Judul DVD 2
+Subjek      :   Subjek DVD 2
+Deskripsi   :   ['Bryan Adams', 'Horror']
+
+================ Katalog ================
+Jumlah item di katalog: 6
+=======================================================
+Ditemukan:
+
+Judul       :   Judul1
+Subjek      :   Subjek1
+Deskripsi   :   ['841239-0', ['Susilo', 'Jubile'], 59, '50cm']
+
+=======================================================
+=======================================================
+Ditemukan, tetapi terdapat lebih dari 1 data yang sama
+Judul       :   Judul DVD 1
+Subjek      :   Subjek DVD 1
+Deskripsi   :   ['Bryan Adams', 'Romance']
+
+Judul       :   Judul DVD 2
+Subjek      :   Subjek DVD 2
+Deskripsi   :   ['Bryan Adams', 'Horror']
+
+=======================================================
+=======================================================
+Tidak ditemukan
+=======================================================
+================ Pengarang ================
+=======================================================
+Ditemukan:
+
+Judul       :   Judul1
+Subjek      :   Subjek1
+Pengarang 1 : Susilo
+Pengarang 2 : Jubile
+ISBN       :   841239-0
+Deskripsi  :   [59, '50cm']
+=======================================================
+=======================================================
+Ditemukan:
+
+Judul       :   Judul2
+Subjek      :   Subjek2
+Pengarang   :   Lincoln
+ISBN       :   844920-0
+Deskripsi  :   [109, '89cm']
+=======================================================
+=======================================================
+Tidak ditemukan
+=======================================================
+Pencarian anda:  Miranda
+PS D:\Python_Praktik\pertemuan8>
