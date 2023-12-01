@@ -1,1 +1,188 @@
+class PerpusItem:
+    def _init_(self, judul, subjek):
+        self.judul = judul
+        self.subjek = subjek
+        self.item = []
+    
+    def LokasiPenyimpanan(self, item):
+        objekKatalog.isi_katalog.append(item)
+        self.item.append(item)
+    
+    def info(self):
+        if len(self.item) == 0:
+            print(f"Item        : Kosong")
+        else:
+            for i in range(len(self.item)):
+                print(f"No. {i+1}")
+                print(f"Judul       :   {self.item[i][0]}")
+                print(f"Subjek      :   {self.item[i][1]}")
+                print(f"Deskripsi   :   {self.item[i][2:len(self.item[0])]}\n")
+    
+
+# Pewarisan
+class Buku(PerpusItem):
+    def __init__(self, judul, subjek, isbn, pengarangs, jmlHal, ukuran):
+        super()._init_(judul, subjek)
+        self.isbn = isbn
+        self.pengarangs = pengarangs
+        self.jmlHal = jmlHal
+        self.ukuran = ukuran
+    
+class Majalah(PerpusItem):
+    def __init__(self, judul, subjek, volume, issue):
+        super()._init_(judul, subjek)
+        self.volume = volume
+        self.issue = issue
+
+class DVD(PerpusItem):
+    def __init__(self, judul, subjek, aktor, genre):
+        super()._init_(judul, subjek)
+        self.aktor = aktor
+        self.genre = genre
+    
+
+# Di luar pewarisan
+class Pengarang:
+    def __init__(self, nama):
+        self.nama = nama
+        self.item = []
+    
+    def info(self):
+        print(f"Pencarian anda:  {self.nama}")
+    
+    def cari(self):
+        pencarian = []
+        for i in range(len(self.item)):
+            if self.nama in self.item[i][3]:
+                pencarian.append(self.item[i])
+
+        print("=======================================================")
+        if len(pencarian) == 1:
+            print("Ditemukan: \n")
+            for i in pencarian:
+                print(f"Judul       :   {i[0]}")
+                print(f"Subjek      :   {i[1]}")
+                if isinstance(i[3], str):
+                    print(f"Pengarang   :   {i[3]}")
+                else:
+                    for j in range(len(i[3])):
+                        print(f"Pengarang {j+1} : {i[3][j]}")
+                print(f"ISBN       :   {i[2]}")
+                print(f"Deskripsi  :   {i[4:6]}")
+
+        elif len(pencarian) > 1:
+            print("Ditemukan, tetapi terdapat lebih dari 1 data yang sama")
+            for i in pencarian:
+                print(f"Judul       :   {i[0]}")
+                print(f"Subjek      :   {i[1]}")
+                if isinstance(i[3], str):
+                    print(f"Pengarang   :   {i[3]}")
+                else:
+                    for j in range(len(i[3])):
+                        print(f"Pengarang {j+1} : {i[3][j]}")
+                print(f"ISBN       :   {i[2]}")
+                print(f"Deskripsi  :   {i[4:6]}")
+        else:
+            print("Tidak ditemukan")
+        print("=======================================================")
+        
+
+
+class Katalog:
+    def __init__(self):
+        self.isi_katalog = []
+
+    def cari(self, item):
+        pencarian = []
+        for i in range(len(self.isi_katalog)):
+            if item in self.isi_katalog[i]:
+                pencarian.append(self.isi_katalog[i])
+        
+        print("=======================================================")
+        if len(pencarian) == 1:
+            print("Ditemukan: \n")
+            for i in pencarian:
+                print(f"Judul       :   {i[0]}")
+                print(f"Subjek      :   {i[1]}")
+                print(f"Deskripsi   :   {i[2:len(i)]}\n")
+        elif len(pencarian) > 1:
+            print("Ditemukan, tetapi terdapat lebih dari 1 data yang sama")
+            for i in pencarian:
+                print(f"Judul       :   {i[0]}")
+                print(f"Subjek      :   {i[1]}")
+                print(f"Deskripsi   :   {i[2:len(i)]}\n")
+        else:
+            print("Tidak ditemukan")
+        print("=======================================================")
+        
+
+        
+    
+# Object
+objekKatalog = Katalog()
+objekPengarang = Pengarang("Susilo")
+
+def proses_menyimpan_buku():
+    objekBuku = Buku("Judul1", "Subjek1", "841239-0", ["Susilo", "Jubile"], 59, "50cm")
+    def auto_isi():
+        objekBuku.LokasiPenyimpanan([objekBuku.judul, objekBuku.subjek, objekBuku.isbn, objekBuku.pengarangs, objekBuku.jmlHal, objekBuku.ukuran])
+        objekPengarang.item.append([objekBuku.judul, objekBuku.subjek, objekBuku.isbn, objekBuku.pengarangs, objekBuku.jmlHal, objekBuku.ukuran])
+    auto_isi()
+
+    objekBuku.judul = "Judul2"
+    objekBuku.subjek = "Subjek2"
+    objekBuku.isbn = "844920-0"
+    objekBuku.pengarangs = "Lincoln"
+    objekBuku.jmlHal = 109
+    objekBuku.ukuran = "89cm"
+    auto_isi()
+
+    objekBuku.info()
+
+def proses_menyimpan_majalah():
+    objekMajalah = Majalah("Judul Majalah 1", "Subjek Majalah 1", "Vol. 53", "Issue 1")
+    def auto_isi():
+        objekMajalah.LokasiPenyimpanan([objekMajalah.judul, objekMajalah.subjek, objekMajalah.volume, objekMajalah.issue])
+    auto_isi()
+
+    objekMajalah.judul = "Judul Majalah 2"
+    objekMajalah.subjek = "Subjek Majalah 2"
+    objekMajalah.volume = "Vol. 89"
+    objekMajalah.issue = "Issue 2"
+
+    auto_isi()
+    objekMajalah.info()
+
+def proses_menyimpan_dvd():
+    objekDVD = DVD("Judul DVD 1", "Subjek DVD 1", "Bryan Adams", "Romance")
+    def auto_isi():
+        objekDVD.LokasiPenyimpanan([objekDVD.judul, objekDVD.subjek, objekDVD.aktor, objekDVD.genre])
+    auto_isi()
+
+    objekDVD.judul = "Judul DVD 2"
+    objekDVD.subjek = "Subjek DVD 2"
+    objekDVD.aktor = "Bryan Adams"
+    objekDVD.genre = "Horror"
+
+    auto_isi()
+    objekDVD.info()
+
+
+proses_menyimpan_buku()
+proses_menyimpan_majalah()
+proses_menyimpan_dvd()
+
+print("================ Katalog ================")
+print(f"Jumlah item di katalog: {len(objekKatalog.isi_katalog)}")
+objekKatalog.cari("Judul1")
+objekKatalog.cari("Bryan Adams")
+objekKatalog.cari("James Bond")
+
+print("================ Pengarang ================")
+objekPengarang.cari()
+objekPengarang.nama = "Lincoln"
+objekPengarang.cari()
+objekPengarang.nama = "Miranda"
+objekPengarang.cari()
+objekPengarang.info()
 
