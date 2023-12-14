@@ -1,8 +1,7 @@
 #       Tugas Kelompok | Studi Kasus Minggu 9
 #       Kelompok:
 #       1.      Raphael Hasiando Sihotang   (5220411221)
-#       2.      Jofran Albhinata            (5220411214)
-#       3.      NONE                        
+#       2.      Jofran Albhinata            (5220411214)                     
 #================================================================
 
 
@@ -83,7 +82,7 @@ class Kereta(KendaraanDarat):
             def fungsi_input2():
                 value_input = int(input("1. IYA | 0. TIDAK"))
                 if value_input == 1:
-                    self.rute.pop(value_input)
+                    self.rute.pop(__hasil_pencarian[0])
                     print("Rute berhasil dihapus")
                 elif value_input == 0:
                     print("Membatalkan...")
@@ -102,7 +101,7 @@ class Kereta(KendaraanDarat):
             def fungsi_input():
                 value_input = int(input("==> "))
                 if value_input > 0 and value_input <= len(__hasil_pencarian):
-                    self.rute.pop(value_input)
+                    self.rute.pop(__hasil_pencarian[value_input-1])
                 else:
                     print("Mohon diulangi...")
                     fungsi_input()
@@ -290,7 +289,7 @@ objek2.tambahRute('Depok', 'Manggarai')
 print(objek2.rute)
 objek2.kurangiRute(None, "ar")
 #   Fungsinya akan mencari kata yang mendekati kata yang tersedia di Rute.
-objek2.kurangiRute('Depo', "Manggara")
+objek2.kurangiRute('Gambi', "Jakart")
 print(objek2.rute)
 print(objek2.jml_kursi)
 print("==========================\n")
